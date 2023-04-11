@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 
-function CreateArea() {
+function CreateArea(props) {
   const [note, setNote] = useState({
     title: "",
     content: "",
   });
 
-function handleChange(event) {
-  const {name, value} = event.target;
-  setNote(prevNote => {
-    return {
-      ...prevNote,
-      [name]: value
-    }
-  })
-}
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setNote((prevNote) => {
+      return {
+        ...prevNote,
+        [name]: value,
+      };
+    });
+  }
+
+  function submitNote(event) {
+    props.onAdd(note);
+    event.preventDefault();
+  }
 
   return (
     <div>
@@ -32,7 +37,7 @@ function handleChange(event) {
           placeholder="Take a note..."
           rows="3"
         />
-        <button>Add</button>
+        <button onClick={submitNote}>Add</button>
       </form>
     </div>
   );
