@@ -31,3 +31,7 @@ npm start
 ## Can you set State to a Parent Component in React?
 
 Sometimes, we require to set the state from the children component to the parent component in ReactJS. We can create a state handler function in the parent component and pass it as a prop of the child component. After that, we can use the child component function to set the parent component's state.
+
+## What are Props? 
+
+Props are used to store data that can be accessed by the children of a React component. They are part of the concept of reusability. Props take the place of class attributes and allow you to create consistent interfaces across the component hierarchy.
